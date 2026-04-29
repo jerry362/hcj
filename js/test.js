@@ -1,7 +1,17 @@
 // 화살표 함수
 
 const result = document.getElementById("result");
-result.textContent = "새롭게 변경된 내용";
+
+let date = new Date();
+let hours = date.getHours();
+
+if (hours >= 13 && hours <= 17) {
+  result.textContent = "안녕";
+  result.className = "black";
+} else {
+  result.textContent = "잠잔다";
+  result.className = "red";
+}
 
 // 1~5시 사이 안녕 검정색
 // 그 외 시간 잠잔다 빨강색
