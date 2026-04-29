@@ -1,9 +1,14 @@
-let kor = 50;
-let mat = 60;
-let eng = 70;
-let tot = kor + mat + eng;
-let avg = tot / 3; // let too = (kor + mat + eng) / 3; , 두 식이 같아요
-console.log(tot);
-// 합계
-console.log(avg);
-// 평균
+// 화살표 함수
+
+const result = document.getElementById("result");
+result.textContent = "새롭게 변경된 내용";
+
+// 1~5시 사이 안녕 검정색
+// 그 외 시간 잠잔다 빨강색
+// 새롭게 변경된 내용에 적용
+
+// document.getElementById("testBtn").addEventListener("click", () => {
+//   alert("실행결과");
+// });
+
+// 모양 : () => {      }
