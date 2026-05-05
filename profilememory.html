@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>프로필 기억하기</title>
+    <link rel="stylesheet" href="./css/pm.css" />
+  </head>
+  <body>
+    <div class="profile-card">
+      <!-- 정보를 보여주는 곳 -->
+      <h1 id="display-name">이름 없음</h1>
+      <p id="display-msg">상태 메시지를 입력해 주세요.</p>
+
+      <hr />
+
+      <!-- 정보를 입력하는 곳 -->
+      <input type="text" id="name-input" placeholder="이름 입력" />
+      <input type="text" id="msg-input" placeholder="상태 메시지 입력" />
+
+      <div class="btn-group">
+        <button id="save-btn">저장하기</button>
+        <button id="clear-btn">초기화</button>
+      </div>
+    </div>
+
+    <script src="./js/pm.js"></script>
+  </body>
+</html>

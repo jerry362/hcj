@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap");
+
+/* 1. 배경과 전체 화면 설정 */
+body {
+  margin: 0;
+  padding: 0;
+  display: flex; /* 요소들을 자유롭게 배치합니다 */
+  flex-direction: column; /* 위아래로 쌓습니다 */
+  align-items: center; /* 가로 중앙 정렬 */
+  justify-content: center; /* 세로 중앙 정렬 */
+  height: 100vh; /* 화면 높이를 꽉 채웁니다 */
+  background: url("../images/dcbg.png") no-repeat center center fixed; /* 배경 이미지 설정 */
+  background-size: cover; /* 이미지가 화면에 꽉 차게 조절 */
+  color: white; /* 기본 글자색은 흰색 */
+  font-family: "Inter", sans-serif;
+  overflow: hidden;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at center,
+    transparent 0%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+  z-index: -1;
+}
+
+h2 {
+  text-transform: uppercase;
+  letter-spacing: 0.6rem;
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 3rem;
+  opacity: 0.9;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.clock {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.clock div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* 2. 시계 박스 디자인 (유리 효과) */
+.clock span {
+  width: 120px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.05); /* 아주 투명한 흰색 배경 */
+  backdrop-filter: blur(15px); /* 배경을 흐리게 해서 유리처럼 만듦 */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* 얇은 테두리 */
+  border-radius: 16px; /* 모서리를 둥글게 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3.5rem; /* 숫자 크기를 크게 */
+  font-weight: 700;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* 은은한 그림자 */
+  -webkit-backdrop-filter: blur(15px);
+  transition: all 0.3s ease;
+}
+
+/* 3. 마우스를 올렸을 때의 반응 */
+.clock span:hover {
+  background: rgba(255, 255, 255, 0.1); /* 좀 더 밝아짐 */
+  transform: translateY(-5px); /* 위로 살짝 떠오름 */
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.clock .text {
+  width: auto;
+  height: auto;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  opacity: 0.6;
+  font-weight: 700;
+}
+
+.clock #ampm {
+  width: 60px;
+  height: 40px;
+  font-size: 1rem;
+  background: rgba(138, 43, 226, 0.2);
+  margin-top: -2.5rem; /* Adjust to align better with numbers */
+  font-weight: 900;
+}
+
+.clock #ampm:hover {
+  background: rgba(138, 43, 226, 0.3);
+}
+
+/*
+backdrop-filter: blur(15px): 이 코드가 바로 '유리 효과'의 핵심입니다. 박스 뒤의 배경이 흐릿하게 비쳐 고급스러운 느낌을 줍니다. 
+flex: 복잡한 계산 없이 요소를 화면 정중앙에 딱 붙여주는 마법의 명령어입니다. 
+*/

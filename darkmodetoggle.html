@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dark Mode Toggle</title>
+    <!-- 디자인 파일(CSS)을 연결한다 -->
+    <link rel="stylesheet" href="./css/dmc.css" />
+  </head>
+  <body>
+    <!-- 1. 체크박스: 실제로 클릭되는 데이터 모델 (화면에서는 숨김) -->
+    <input type="checkbox" id="dark-mode" class="input" />
+
+    <!-- 2. 라벨: 사용자가 눈으로 보고 클릭하는 스위치 모양 -->
+    <label for="dark-mode" class="label">
+      <div class="circle"></div>
+    </label>
+
+    <!-- 3. 컨텐츠: 테마 변경에 따라 색이 변할 내용물 -->
+    <div class="container">
+      <h1>Dark Mode Toggle</h1>
+      <p class="description">
+        Light 모드와 Dark 모드 사이의 부드러운 전환을 경험해보라.
+      </p>
+
+      <div class="card">
+        <h3>Interactive Card</h3>
+        <p>
+          다크모드에서는 가독성을 높이기 위해 배경은 어둡게, 텍스트는 밝게
+          변한다.
+        </p>
+      </div>
+
+      <div class="features">
+        <div class="feature-item">🌓 Smooth Transitions</div>
+        <div class="feature-item">💾 Local Storage Support</div>
+        <div class="feature-item">🎨 CSS Variable Implementation</div>
+      </div>
+    </div>
+
+    <!-- 4. 자바스크립트 연결: 동작을 제어한다 -->
+    <script src="./js/dmc.js"></script>
+  </body>
+</html>
+
+<!--
+<input type="checkbox">: 체크 여부(on/off)를 판단하는 핵심 요소이다. 
+<label for="dark-mode">: for 속성을 사용하여 체크박스와 연결했다. 라벨을 클릭하면 체크박스가 체크된다. 
+<div class="circle">: 스위치 내부에서 좌우로 움직일 둥근 버튼이다.
+  -->

@@ -1,0 +1,136 @@
+/* 1. 기본 색상 변수 설정 (Light 모드) */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #2c3e50;
+  --toggle-bg: #dee2e6;
+  --circle-bg: #ffffff;
+  --secondary-text: #7f8c8d;
+  --card-bg: #f8f9fa;
+  --card-border: #e9ecef;
+  --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  --accent-color: #3498db;
+  /* ...기타 변수들 */
+}
+
+/* 2. 다크모드 시 변수 값 변경 */
+body.dark {
+  --bg-color: #1a1a2e;
+  --text-color: #e94560;
+  --toggle-bg: #0f3460;
+  --circle-bg: #e94560;
+  --secondary-text: #95a5a6;
+  --card-bg: #16213e;
+  --card-border: #0f3460;
+  --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  --accent-color: #e94560;
+}
+
+/* 3. 실제 적용 */
+body {
+  background-color: var(--bg-color); /* 변수를 사용해 배경색 적용 */
+  color: var(--text-color);
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease; /* 색상 변경 시 부드럽게 전환 */
+  /* ...정렬 설정 */
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 50px;
+}
+
+.input {
+  visibility: hidden;
+  position: absolute;
+}
+
+/* 4. 스위치 모양 디자인 */
+.label {
+  width: 70px;
+  height: 34px;
+  background-color: var(--toggle-bg);
+  border-radius: 17px;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.4s ease;
+  margin-bottom: 40px;
+}
+
+.circle {
+  width: 26px;
+  height: 26px;
+  background-color: var(--circle-bg);
+  border-radius: 50%;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* 튕기는 듯한 효과 */
+}
+
+/* 5. 체크되었을 때 원의 위치 이동 */
+.input:checked + .label .circle {
+  transform: translateX(36px); /* 원을 오른쪽으로 36px 밀어낸다 */
+}
+
+.container {
+  max-width: 600px;
+  text-align: center;
+  padding: 0 20px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.description {
+  color: var(--secondary-text);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: var(--card-shadow);
+  transition: all 0.4s ease;
+  margin-bottom: 2rem;
+}
+
+.card h3 {
+  margin-top: 0;
+  color: var(--accent-color);
+}
+
+.card p {
+  color: var(--text-color);
+  margin-bottom: 0;
+}
+
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.feature-item {
+  background-color: var(--card-bg);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  border: 1px solid var(--card-border);
+  transition: all 0.4s ease;
+}
+
+/*
+:root와 body.dark: 같은 변수 이름을 쓰지만 모드에 따라 담긴 색상 값만 바꾼다. 이 덕분에 하위 요소들은 변수 이름만 유지하면 자동으로 색이 바뀐다. 
+transition: 색상이나 위치가 바뀔 때 끊기지 않고 0.4초 동안 서서히 변하게 만든다. 
+*/

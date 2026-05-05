@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sticky Navbar</title>
+    <!-- 디자인(CSS) 파일을 연결한다 -->
+    <link rel="stylesheet" href="./css/sn.css" />
+  </head>
+  <body>
+    <!-- 1. 네비게이션 바: 로고와 메뉴 버튼들이 들어간다 -->
+    <div class="navbar">
+      <a href="/index.html"><img src="logo.svg" alt="logo" /></a>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- 2. 상단 컨테이너: 첫 화면에 꽉 차게 보일 배경 이미지 영역이다 -->
+    <div class="top-container">
+      <h1>Explore Our Vision</h1>
+      <p>현대적 디자인과 자연의 아름다움을 탐험하라.</p>
+    </div>
+
+    <!-- 3. 하단 컨테이너: 실제 내용과 갤러리가 들어가는 영역이다 -->
+    <div class="bottom-container">
+      <section class="about-section">
+        <h2>About Our Gallery</h2>
+        <p class="text">공간, 빛, 그리고 조화에 대한 이야기를 담고 있다.</p>
+      </section>
+
+      <!-- 중략: 갤러리 그리드와 연락처 정보가 포함된다 -->
+    </div>
+
+    <!-- 4. 자바스크립트 연결: 스크롤 감지 기능을 활성화한다 -->
+    <script src="./js/sn.js"></script>
+  </body>
+</html>
+
+<!--
+<div class="navbar">: 화면 상단에 고정될 메뉴 영역이다. 
+<div class="top-container">: 사용자가 처음 마주하는 커다란 배경 이미지 섹션이다. 
+<div class="bottom-container">: 스크롤을 내렸을 때 네비게이션 바의 색상을 바꾸는 기준점이 되는 영역이다. 
+-->

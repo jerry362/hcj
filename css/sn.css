@@ -1,0 +1,38 @@
+/* 1. 네비게이션 바 기본 설정 */
+.navbar {
+  display: flex; /* 요소들을 가로로 정렬한다 */
+  position: fixed; /* 스크롤을 내려도 화면 상단에 고정시킨다 */
+  background-color: rgba(255, 255, 255, 0.95); /* 반투명한 흰색 배경 */
+  backdrop-filter: blur(5px); /* 배경을 흐릿하게 하여 고급스럽게 만든다 */
+  width: 100%;
+  padding: 10px 0;
+  transition: all 0.4s ease; /* 상태가 변할 때 0.4초 동안 부드럽게 바뀐다 */
+  z-index: 1000; /* 다른 요소들보다 항상 위에 보이게 한다 */
+}
+
+/* 2. 스크롤 시 적용될 '활성화' 스타일 */
+.navbar.active {
+  background-color: #1a1a2e; /* 배경색을 진한 남색으로 바꾼다 */
+  padding: 5px 0; /* 높이를 살짝 줄여 더 슬림하게 만든다 */
+}
+
+.navbar.active ul li a {
+  color: white; /* 어두운 배경에 맞춰 글자색을 흰색으로 바꾼다 */
+}
+
+/* 3. 첫 화면 배경 설정 */
+.top-container {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("이미지주소");
+  height: 100vh; /* 화면 높이를 100% 꽉 채운다 */
+  background-size: cover; /* 이미지가 잘리지 않게 꽉 채운다 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* 내용을 정중앙에 배치한다 */
+  align-items: center;
+}
+
+/*
+position: fixed: 스크롤과 상관없이 메뉴바를 화면 꼭대기에 딱 붙여두는 핵심 속성이다. 
+.navbar.active: 평소에는 적용되지 않다가, 자바스크립트가 이 클래스를 추가하는 순간 디자인이 바뀐다. 
+*/
